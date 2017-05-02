@@ -1,0 +1,22 @@
+version: "3"
+services:
+  api:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "4000:80"
+    environment:
+      DB_HOST: "db"
+    depends_on:
+      - db
+  db:
+    image: "postgres:9.6.2"
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: postgres
+      POSTGRES_DB: amble-api_development
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
