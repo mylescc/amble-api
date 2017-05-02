@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -6,25 +6,28 @@ git_source(:github) do |repo_name|
 end
 
 # Core
-gem 'rails', '~> 5.0.2'
-gem 'pg', '~> 0.18'
-gem 'rack-cors'
+gem "rails", "~> 5.0.2"
+gem "pg", "~> 0.18"
+gem "rack-cors"
 
 # Authentication
-gem 'devise_token_auth'
+gem "devise_token_auth"
 
 # Server
-gem 'puma', '~> 3.0'
+gem "puma", "~> 3.0"
 
 group :development, :test do
-  gem 'pry-rails'
+  gem "pry-rails"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "listen", "~> 3.0.5"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
