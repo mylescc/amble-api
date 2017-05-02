@@ -14,7 +14,9 @@ gem "rack-cors"
 gem "devise_token_auth"
 
 # Server
-gem "puma", "~> 3.0"
+gem "foreman"
+gem "puma"
+gem "puma-heroku"
 
 group :development, :test do
   gem "pry-rails"
