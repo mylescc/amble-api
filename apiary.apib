@@ -3,7 +3,90 @@ HOST: http://polls.apiblueprint.org/
 
 # Amble Api
 
-## Register steps [POST /register_steps]
+## Auth  [/auth]
+
+### Create New User [POST /auth]
+
+This will createa new user in the system. The request will return a bunch of 
+headers that you will need to include in all future request so that we can identify
+the who the user i
+
++ Request (application/json)
+
+        {
+            "password": "123456",
+            "password_confirmation": "123456",
+            "email": "mylescc@gmail.com",
+            "first_name": "Myles",
+            "last_name": "Cowper-Coles"
+        }
+
++ Response 200 (application/json)
+
+    + Header
+
+            access-token: dtpIRB3-Dxa3jlQHksUhMQ
+            client: 23ag41TNIzrqzROOogrE9A
+            expiry: 1525813931
+            token-type: Bearer
+            uid: mylescc@gmail.com
+
+    + Body
+
+            {
+                "status": "success",
+                "data": {
+                    "id": 2,
+                    "email": "mylescc@gmail.com",
+                    "provider": "email",
+                    "uid": "mylescc@gmail.com",
+                    "first_name": "Myles",
+                    "last_name": "Cowper-Coles",
+                    "image": null,
+                    "created_at": "2017-05-08T21:12:11.527Z",
+                    "updated_at": "2017-05-08T21:12:11.608Z"
+                }
+            }
+
+### Login User [POST /auth/sign_in]
+
+You will just need to send the email and password to the server. Again it will return
+a bunch of details about the user in the header which you'll need to use for future requests.Ro
+
++ Request (application/json)
+
+        {
+            "password": "123456",
+            "email": "mylescc@gmail.com"
+        }
+
++ Response 200 (application/json)
+
+    + Header
+
+            access-token: dtpIRB3-Dxa3jlQHksUhMQ
+            client: 23ag41TNIzrqzROOogrE9A
+            expiry: 1525813931
+            token-type: Bearer
+            uid: mylescc@gmail.com
+
+    + Body
+
+            {
+                "data": {
+                    "id": 2,
+                    "email": "mylescc@gmail.com",
+                    "provider": "email",
+                    "uid": "mylescc@gmail.com",
+                    "first_name": "Myles",
+                    "last_name": "Cowper-Coles",
+                    "image": null
+                }
+            }
+
+## Steps [/register_steps]
+
+### Register steps [POST]
 
 So with this you just pass the date and the total number of steps for that day.
 It will override any previous value they have for that day. This will also update
