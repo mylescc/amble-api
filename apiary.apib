@@ -1,0 +1,135 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# Amble Api
+
+## Register steps [POST /register_steps]
+
+So with this you just pass the date and the total number of steps for that day.
+It will override any previous value they have for that day. This will also update
+all walks that the current user is on with their progress. 
+
++ Request (application/json)
+
+        {
+            "date": "25-5-2017",
+            "total_steps": 4343
+        }
+
++ Response 200 (application/json)
+
+# Routes Collection [/routes]
+
+These are the routes that people will be able to find and sign up to.
+
+## List All Routes [GET]
+
++ Response 200 (application/json)
+
+        {
+            "data": [
+                {
+                    "id": 1,
+                    "name": "M25 Walk",
+                    "description": "A beautiful walk around the M25",
+                    "distance_km": 120,
+                    "distance_steps": 4334213
+                }
+            ],
+            "count": 1
+        }
+
+
+#  Walks Collection [/walks]
+
+## List All Walks [GET]
+
+Lists all the walks for the current user.
+
++ Response 200 (application/json)
+
+        {
+            "data": [
+                {
+                    "id": 1,
+                    "name": "M25 Walk",
+                    "distance_total_km": 120,
+                    "distance_complete_km": 3,
+                    "distance_left_km": 117,
+                    "steps_total": 12730,
+                    "steps_complete": 1200,
+                    "steps_left": 11530,
+                    "started_at": "Some DateTime",
+                    "completed_at": "Some DateTime",
+                    "status": "in-progress"
+                },
+                {
+                    "id": 1,
+                    "name": "Walk to work",
+                    "distance_total_km": 14,
+                    "distance_complete_km": 10,
+                    "distance_left_km": 4,
+                    "steps_total": 4000,
+                    "steps_complete": 1200,
+                    "steps_left": 2800,
+                    "started_at": "Some DateTime",
+                    "completed_at": "Some DateTime",
+                    "status": "complete"
+                }
+            ],
+            "count": 2
+        }
+
+
+
+## Get a Walk [GET /walks/{id}]
+
+Allows you get to just get a specific walk. I guess in the future this might contain
+more details about how many steps they did on what days so people can make nice
+graphs?
+
++ Response 200 (application/json)
+
+        {
+            "data": {
+                "id": 1,
+                "name": "M25 Walk",
+                "distance_total_km": 120,
+                "distance_complete_km": 3,
+                "distance_left_km": 117,
+                "steps_total": 12730,
+                "steps_complete": 1200,
+                "steps_left": 11530,
+                "started_at": "Some DateTime",
+                "completed_at": "Some DateTime",
+                "status": "in-progress"
+            }
+        }
+        
+## Create a New Walk [POST]
+
+If the user wants to start on a certain route, you just post the Id of the 
+route that the user wants to start walking. 
+
++ Request (application/json)
+
+        {
+            "route_id": 1
+        }
+
++ Response 201 (application/json)
+
+        {
+            "data": {
+                "id": 1,
+                "name": "M25 Walk",
+                "distance_total_km": 120,
+                "distance_complete_km": 3,
+                "distance_left_km": 117,
+                "steps_total": 12730,
+                "steps_complete": 0,
+                "steps_left": 12730,
+                "started_at": "Now Date Time",
+                "completed_at": null,
+                "status": "in-progress"
+            }
