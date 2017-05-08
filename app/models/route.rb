@@ -1,5 +1,4 @@
 class Route < ApplicationRecord
-
   def as_json(_options = {})
     {
       id: id,
