@@ -20,6 +20,7 @@ gem "puma"
 gem "puma-heroku"
 
 group :development, :test do
+  gem "codeclimate-test-reporter", "~> 1.0.0"
   gem "factory_girl_rails"
   gem "faker"
   gem "pry-rails"
