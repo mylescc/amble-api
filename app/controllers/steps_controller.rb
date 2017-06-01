@@ -3,7 +3,7 @@ class StepsController < ApplicationController
 
   def register_steps
     step_day = find_or_create_step_day
-    step_day.update(steps: params[:steps].to_i)
+    step_day.update(steps: params[:total_steps].to_i)
     head :ok
   end
 
