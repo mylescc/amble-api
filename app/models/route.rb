@@ -1,4 +1,6 @@
 class Route < ApplicationRecord
+  has_many :walks
+
   def as_json(_options = {})
     {
       id: id,

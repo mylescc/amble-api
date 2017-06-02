@@ -29,6 +29,11 @@ group :development, :test do
   gem "rspec-rails"
 end
 
+group :test do
+  #gem "shoulda-matchers", require: false
+  #gem "shoulda-callback-matchers"
+end
+
 group :development do
   gem "listen", "~> 3.0.5"
   gem "spring"

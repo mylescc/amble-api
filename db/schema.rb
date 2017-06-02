@@ -63,17 +63,14 @@ ActiveRecord::Schema.define(version: 20170602111021) do
   end
 
   create_table "walks", force: :cascade do |t|
-    t.string   "name",                 default: "", null: false
     t.integer  "user_id"
     t.integer  "route_id"
-    t.integer  "distance_total_km",    default: 0,  null: false
-    t.integer  "distance_complete_km", default: 0,  null: false
-    t.integer  "steps_total",          default: 0,  null: false
-    t.integer  "steps_complete",       default: 0,  null: false
+    t.integer  "distance_complete_km", default: 0, null: false
+    t.integer  "steps_complete",       default: 0, null: false
     t.datetime "started_at"
     t.datetime "completed_at"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["route_id"], name: "index_walks_on_route_id", using: :btree
     t.index ["user_id"], name: "index_walks_on_user_id", using: :btree
   end
