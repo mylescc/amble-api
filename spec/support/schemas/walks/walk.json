@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "required": true
+        },
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "distance_total_km": {
+          "type": "integer",
+          "required": true
+        },
+        "distance_complete_km": {
+          "type": "integer",
+          "required": true
+        },
+        "distance_left_km": {
+          "type": "integer",
+          "required": true
+        },
+        "steps_total": {
+          "type": "integer",
+          "required": true
+        },
+        "steps_complete": {
+          "type": "integer",
+          "required": true
+        },
+        "steps_left": {
+          "type": "integer",
+          "required": true
+        },
+        "started_at": {
+          "type": "time",
+          "required": true
+        },
+        "completed_at": {
+          "type": "time",
+          "required": true
+        },
+        "status": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}

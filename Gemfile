@@ -25,6 +25,7 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
+  #gem "json-schema", "~> 2.4.1"
   gem "pry-rails"
   gem "rspec-rails"
 end
