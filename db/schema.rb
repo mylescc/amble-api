@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508201700) do
+ActiveRecord::Schema.define(version: 20170602111021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,5 +62,23 @@ ActiveRecord::Schema.define(version: 20170508201700) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
+  create_table "walks", force: :cascade do |t|
+    t.string   "name",                 default: "", null: false
+    t.integer  "user_id"
+    t.integer  "route_id"
+    t.integer  "distance_total_km",    default: 0,  null: false
+    t.integer  "distance_complete_km", default: 0,  null: false
+    t.integer  "steps_total",          default: 0,  null: false
+    t.integer  "steps_complete",       default: 0,  null: false
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["route_id"], name: "index_walks_on_route_id", using: :btree
+    t.index ["user_id"], name: "index_walks_on_user_id", using: :btree
+  end
+
   add_foreign_key "step_days", "users"
+  add_foreign_key "walks", "routes"
+  add_foreign_key "walks", "users"
 end
