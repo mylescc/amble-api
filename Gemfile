@@ -25,14 +25,14 @@ group :development, :test do
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
-  #gem "json-schema", "~> 2.4.1"
+  gem "json-schema", "~> 2.4.1"
   gem "pry-rails"
   gem "rspec-rails"
 end
 
 group :test do
-  #gem "shoulda-matchers", require: false
-  #gem "shoulda-callback-matchers"
+  gem "shoulda-callback-matchers"
+  gem "shoulda-matchers", require: false
 end
 
 group :development do
