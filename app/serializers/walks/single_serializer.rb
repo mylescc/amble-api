@@ -19,7 +19,7 @@ module Walks
         started_at: walk.started_at,
         completed_at: walk.completed_at,
         status: walk.status
-      }.to_json
+      }
     end
   end
 end

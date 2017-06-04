@@ -7,7 +7,7 @@ class WalksController < ApplicationController
       route_id: params[:route_id].to_i
     )
     render json: {
-      data: Walks::SingleSerializer.new(walk).as_json
+      data: Walks::SingleSerializer.new(walk)
     }
   rescue Walks::Error::RouteNotFound
     head :not_found

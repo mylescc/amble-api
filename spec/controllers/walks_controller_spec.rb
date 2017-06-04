@@ -22,7 +22,7 @@ RSpec.describe WalksController, type: :controller do
           expect(user.walks.count).to eq 1
         end
 
-        xit "returns the walk" do
+        it "returns the walk" do
           post :create, params: { route_id: route.id }
           expect(response).to be_ok
           expect(response.body).to match_schema "walks/walk"
