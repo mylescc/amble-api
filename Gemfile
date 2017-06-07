@@ -28,7 +28,6 @@ group :development, :test do
   gem "json-schema", "~> 2.4.1"
   gem "pry-rails"
   gem "rspec-rails"
-  #gem "shoulda-callback-matchers"
   gem "shoulda-matchers", git: "https://github.com/thoughtbot/shoulda-matchers.git", branch: "rails-5"
 end
 

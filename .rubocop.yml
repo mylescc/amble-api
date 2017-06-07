@@ -32,6 +32,9 @@ Style/NumericPredicate:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/PercentLiteralDelimiters:
+  EnforcedStyle: "braces"
+
 Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
@@ -45,9 +48,16 @@ Rails/HttpPositionalArguments:
 Style/TrailingCommaInLiteral:
   Enabled: false
 
+
 Rails/SkipsModelValidations:
   Enabled: false
 
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/serializers/**/*'
 # Can remove when bbatsov/rubocop#4189 is released
 Lint/AmbiguousBlockAssociation:
   Enabled: false
