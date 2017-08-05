@@ -1,3 +1,3 @@
-- When logging walks its makes routes update
+- Move current routes to api v1 module
 - Add web ui for logging in
 
