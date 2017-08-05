@@ -8,6 +8,8 @@ class Walk < ApplicationRecord
 
   delegate :name, to: :route
 
+  scope :active, -> { where(completed_at: nil) }
+
   def distance_total_km
     route.distance_km
   end

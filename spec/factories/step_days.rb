@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :step_day do
     steps 1
     date "2017-05-08"
-    user nil
+    association :user
   end
 end

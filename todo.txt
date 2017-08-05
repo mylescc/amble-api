@@ -1,0 +1,3 @@
+- When logging walks its makes routes update
+- Add web ui for logging in
+
