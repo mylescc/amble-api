@@ -1,0 +1,10 @@
+<main class="loginForm-container">
+<%= form_for @resource, html: { class: "form" }, url: sessions_path, method: :post do |f| %>
+  <h1>Login to Amble</h1>
+
+  <%= f.text_field :email, class: "form-textInput", placeholder: "email address" %>
+  <%= f.password_field :password, class: "form-textInput", placeholder: "password" %>
+
+  <%= f.submit "Login", class: "form-submit" %>
+<% end %>
+</main>

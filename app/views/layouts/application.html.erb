@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amble</title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "//fd-v5-api.imgix.net/assets/images/v2/favicon.ico" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+    <%= render partial: 'layouts/header' %>
+    <%= yield %>
+  </body>
+</html>

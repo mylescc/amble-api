@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Walk < ApplicationRecord
-  COMPLETE_STATUS = "complete".freeze
-  IN_PROGRESS_STATUS = "in-progress".freeze
-  NOT_STARTED_STATUS = "not-started".freeze
+  COMPLETE_STATUS = 'complete'
+  IN_PROGRESS_STATUS = 'in-progress'
+  NOT_STARTED_STATUS = 'not-started'
 
   belongs_to :user
   belongs_to :route
@@ -9,6 +11,9 @@ class Walk < ApplicationRecord
   delegate :name, to: :route
 
   scope :active, -> { where(completed_at: nil) }
+  scope :in_progress, -> { where(completed_at: nil).where.not(steps_complete: 0) }
+  scope :not_started, -> { where(completed_at: nil, steps_complete: 0) }
+  scope :completed, -> { where.not(completed_at: nil) }
 
   def distance_total_km
     route.distance_km
@@ -29,7 +34,7 @@ class Walk < ApplicationRecord
   def status
     if completed_at.present?
       COMPLETE_STATUS
-    elsif steps_complete == 0 && completed_at.nil?
+    elsif steps_complete.zero? && completed_at.nil?
       NOT_STARTED_STATUS
     else
       IN_PROGRESS_STATUS

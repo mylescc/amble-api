@@ -1,0 +1,17 @@
+.header {
+  width: 100vw;
+  background-color: $red;
+  color: white;
+  padding: .8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logout {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

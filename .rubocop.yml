@@ -12,23 +12,18 @@ HasAndBelongsToMany:
 
 Metrics/AbcSize:
   Max: 50
-  Exclude:
-    - 'app/controllers/customers/registrations_controller.rb'
-    - 'app/models/segment_analytics.rb'
-    - 'lib/db_seed/pack_seeder.rb'
 
 Metrics/CyclomaticComplexity:
   Max: 12
 
 Metrics/ClassLength:
   Max: 250
-  Exclude:
-    - 'lib/db_seed/pack_seeder.rb'
+
+Metrics/BlockLength:
+  Max: 1000
 
 Metrics/LineLength:
-  Max: 80
-  Exclude:
-    - 'spec/models/subscription_spec.rb'
+  Max: 120
 
 Metrics/MethodLength:
   Enabled: false

@@ -1,11 +1,11 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe RoutesController, type: :controller do
-  describe "GET #index" do
+RSpec.describe Api::V1::RoutesController, type: :controller do
+  describe 'GET #index' do
     let!(:route1) { create :route }
     let!(:route2) { create :route }
 
-    it "returns all routes" do
+    it 'returns all routes' do
       get :index
       expect(response).to be_ok
       parsed_body = JSON.parse(response.body).deep_symbolize_keys

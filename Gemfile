@@ -3,12 +3,15 @@ ruby '2.3.4'
 
 gem 'devise_token_auth'
 gem 'foreman'
+gem 'normalize-rails'
 gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'puma-heroku'
 gem 'rack-cors'
 gem 'rails', '~> 5.0.2'
 gem 'rollbar'
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
