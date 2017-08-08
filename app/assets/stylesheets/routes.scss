@@ -1,0 +1,56 @@
+.routes-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.route-box {
+  width: 250px;
+  height: 300px;
+  border: 1px solid grey;
+  background-color: transparent;
+
+}
+
+.route-box-title {
+  z-index: 1;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.route-box-img {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+
+.route-box-body {
+  font-size: 14px;
+  padding: 15px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.route-box-p {
+  z-index: 1;
+  margin: 0 0 10px;
+}
+
+.route-box-link {
+  z-index: 1;
+  padding: 10px;
+  display: block;
+  background-color: $red;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  }
+}

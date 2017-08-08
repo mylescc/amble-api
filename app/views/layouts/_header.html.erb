@@ -1,6 +1,9 @@
 <nav class="header">
   <div class="header-section">
-    Amble
+    <%=  link_to 'Amble', root_path, class: 'header-logo' %>
+    <ul class="header-links">
+      <li><%= link_to 'Walks', walks_path, class: 'header-link' %></li>
+    </ul>
   </div>
   <div class="header-section">
     <%= link_to 'Logout', logout_sessions_path, class: 'header-logout' %>

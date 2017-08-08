@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="container-inner">
+    <h1 class="h1">All Routes</h1>
+    <div class="routes-container">
+      <% @routes.each do |route| %>
+        <div class="route-box">
+          <%= image_tag "//placebear.com/248/298", alt: route.name, class: 'route-box-img' %>
+          <h2 class="route-box-title"><%= route.name %></h2>
+          <div class="route-box-body">
+            <p class="route-box-p"><%= route.description %></p>
+            <%= link_to 'View Route', route_path(route), class: 'route-box-link' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
